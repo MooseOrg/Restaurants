@@ -9,7 +9,6 @@ namespace Restaurants.API.Controllers;
 [Route("api/restaurants")]
 public class RestaurantController(IRestaurantsService restaurantsService) : ControllerBase
 {
-
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -31,7 +30,7 @@ public class RestaurantController(IRestaurantsService restaurantsService) : Cont
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantDto createRestaurantDto)
+    public async Task<IActionResult> Create([FromBody] CreateRestaurantDto createRestaurantDto)
     {
         int id = await restaurantsService.Create(createRestaurantDto);
 
