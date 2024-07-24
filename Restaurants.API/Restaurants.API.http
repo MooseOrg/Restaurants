@@ -4,6 +4,24 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurants
 
 ###
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1
 
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/3
+
+###
+
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name": "Chowking",
+  "Description": "Fast-food chain serving Chinese cuisine like dim sum, noodles, and rice meals.",
+  "Category": "Fast Food",
+  "HasDelivery": true,
+  "ContactEmail": "contact@chowking.com",
+  "ContactNumber": "+639173456789",
+  "City": "Manila",
+  "Street": "Taft Avenue",
+  "PostalCode": "1004"
+}
 ###
