@@ -3,3 +3,7 @@
 GET {{RestaurantsAPI_HostAddress}}/api/restaurants
 
 ###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/2
+
+###
