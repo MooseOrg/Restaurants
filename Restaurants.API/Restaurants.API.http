@@ -5,7 +5,7 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurants
 ###
 
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurants/4
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/5
 
 ###
 
@@ -16,9 +16,9 @@ Content-Type: application/json
 {
   "Name": "Tasty Bites",
   "Description": "A cozy restaurant serving a variation of food",
-  "Category": "Internation Cuisine",
-  "ContactEmail": "test@test.com",
+  "Category": "Indian",
+  "ContactEmail": "tesd@c.com",
   "ContactNumber": "5555-555555",
-  "PostalCode": "33-211"
+  "PostalCode": "33-222"
 }
 ###
