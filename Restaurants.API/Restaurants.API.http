@@ -5,7 +5,7 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurants
 ###
 
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurants/5
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/
 
 ###
 
@@ -21,4 +21,20 @@ Content-Type: application/json
   "ContactNumber": "5555-555555",
   "PostalCode": "33-222"
 }
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/7
+
+###
+
+
+PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/5
+Content-Type: application/json
+
+{
+  "Name": "Sample patch",
+  "Description": "adawddawddawdaw",
+  "HasDelivery" : true
+}
+
 ###
