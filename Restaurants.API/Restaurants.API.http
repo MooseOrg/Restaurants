@@ -5,7 +5,7 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurants
 ###
 
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurants/222
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/2
 
 ###
 
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 ###
 
-DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/722
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/3
 
 ###
 
@@ -36,5 +36,29 @@ Content-Type: application/json
   "Description": "adawddawddawdaw",
   "HasDelivery" : true
 }
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants/2/dishes
+Content-Type: application/json
+
+{
+  "Name": "Spags",
+  "Description": " awdwadwddstyle",
+  "Price" : 44,
+  "KiloCalories": 1
+}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/111/dishes/11
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/221/dishes
+
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/2/dishes
 
 ###
