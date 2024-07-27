@@ -1,9 +1,9 @@
-@token = CfDJ8JpzrzOeqptEmj4k3IBz7nXMOQAOrU8umlaGfScNA0JJnkIxCkMntdxfPY3PumnpBZOI9Elfvuc4xI6lMgTGKJGyGz_aRBWM1gjfWv-kEuZqycPsiKYNGIa6RihrUv9hEiXU5UArqMrrWpOkEobQcd_eJco0JPtBS5yEsFdPqTFr6Rbr4AqCUT5vtGrbQ1qW8QDTi8kpRdA8Y1lD_XwyURFFJlD5ZjbOQdGz11-VwBHJ4Sc8RLEtci8otuDsRd8PMs9Dj629jFiM4mkvMsgI9o-7AiYGMTQGgN0wuWLMMXV1E-2vCFANFNcJ-W2hZTGZmCodblplgo7pL0qjyVZjX1ELPwuAWo3VKnRzXtuAWmGsrvZeTSGtUEu4loWsPvecmcLb2K72lK98GJNrWwvfwpIIKpNrXz_4ZKZM_HZ0J-7FvdZ8OYskxFNn8a5FjFYCxlNm5lot6pJJJY2jDJJGD7byDm_yyI7a7iuLXunuoAZ7Xt2u_p_R3VsHgDjApfvDJwCNYOHDn5lqSENKWCVqhmGhYVlb5KPcyfIpZDQsjZhgdlFFko1GG7TxTxge7n02fswafif6YoHpMvgE_1hZaGN5AP8ETdBQPE-o5WO58S7zmneBXzMNyUzRhDbKTpeHjmLavlIz2swW3vTqd6gun2HocA4yNsQG8461RMcOJWleuIfuQPsPu1251OaSp99QJQ
+@token =CfDJ8JpzrzOeqptEmj4k3IBz7nW8hDMzEF9qUACfYgFH-yKrKgEdCgJV-EhafT7pldoHdAqJK3Cw8xFObfbysuuQjlnmyvMRkgzec_cArPHBmk3bwBmboJcPpglzhznmcobmnegWs1p1d37PeWHiYMpOE9v0yWXTY8lu_A87SU9tt3W3pz1V2RJ-98Azsmbgv2a2GbcUGaemlXvEuBwsnOV1_Eoym2QPgy_tclEqFIsga8hYN9hbyvVwXrLyHo9IvWmXPYLQ6enOxGbkqicgH1W__BcDd4tLAl5zhOgaz_UQUGFUcZ0twRWfn5q43Ipo9conbFc1jQxiIxx4rcRtxhFGVhVMpjvNyP34u8HXdyVdduAXyt6_IaaiCajrTnf7DRQOJY8erMYnq0hJTE_iBFLtVf0sIjvkrKmOzuhY12tnqjHtgn_buFuwi4lueFYAEQw1oY-dPWvDWIlhRkBudNT-Ym1iwg601vWqkmMf3PVFXCDcWQwZqU2bNmiye1XHFXhYeKJAZx4NDviC7ojn3mFBU9EieFXbYd1ZuSxAULfkd3witVw9wjnlyaxLEdD2XAybBurVcaLZlqrxHG8oGHR-zuC__3S91k-W_SWvclif7UGc6nq69NiPXSFTrX2vEbeyF0AtFuMxmTSpy9hNCZU2lrJTRFCzqYtwHPw7Pc1eLxT7cHRnXNVsrkrjbMXrQA9tB7Vxz9Zucc_sSnfM4WAd8G6FkWBYTGhCqU4RxhbOB_D92Ur8a7Ky5YnSXJwArUeXGCn9QnZKeYDfvaeoZotB1hf9tKX_gwS8hXtJXpwQz-Ed
 
 @RestaurantsAPI_HostAddress = https://localhost:7083
 
 GET {{RestaurantsAPI_HostAddress}}/api/restaurants
-# Authorization: Bearer {{token}}
+Authorization: Bearer {{token}}
 
 ###
 
@@ -15,28 +15,34 @@ Authorization: Bearer {{token}}
 
 
 POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
   "Name": "Tasty Bites",
   "Description": "A cozy restaurant serving a variation of food",
   "Category": "Indian",
+  "HasDelivery": true,
   "ContactEmail": "tesd@c.com",
   "ContactNumber": "5555-555555",
+  "City": "Lubao",
+  "Street": "44",
   "PostalCode": "33-222"
 }
 ###
 
-DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/3
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/13
+Authorization: Bearer {{token}}
 
 ###
 
 
-PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/522
+PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/2
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "Name": "Sample patch",
+  "Name": "Update by admin",
   "Description": "adawddawddawdaw",
   "HasDelivery" : true
 }
@@ -71,7 +77,7 @@ POST {{RestaurantsAPI_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "owner@test.com",
   "password": "Password!1"
 }
 
@@ -82,7 +88,7 @@ POST {{RestaurantsAPI_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "user@test.com",
   "password": "Password!1"
 }
 ###
@@ -91,6 +97,7 @@ PATCH {{RestaurantsAPI_HostAddress}}/api/identity/user
 Content-Type: application/json
 
 {
-  //UpdateUserDetailsCommand
+  "Nationality": "Polish",
+  "DateOfBirth": "2024-2-4"
 }
 
