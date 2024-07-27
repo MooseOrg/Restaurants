@@ -2,8 +2,7 @@
 
 @RestaurantsAPI_HostAddress = https://localhost:7083
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurants
-Authorization: Bearer {{token}}
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants?searchPhrase=&pageSize=5&pageNumber=1&sortBy=Name&sortDirection=Descending
 
 ###
 
